@@ -2,15 +2,17 @@
 def prime_checker(number):
     remain = 0
     span = range(2,number+1)
-
+    not_prime = 0
     for value in span:
         if number % value == 0 and number != value:
-            print("This is not a prime number.")
-            break
-        if number % value > 0:
+            not_prime += 1
+        elif number % value > 0:
             remain += number % value
-        elif remain > 0 and value == number:
-            print("This is a prime number")
+    if remain > 0 and not_prime == 0:
+        print("This is a prime number.")
+    else:
+        print("This is NOT a prime number.")
+    
 
 #Write your code above this line 👆
     
